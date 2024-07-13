@@ -52,6 +52,51 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+	<style>
+		.isotope-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.item:hover .isotope-overlay {
+			opacity: 1;
+		}
+
+		.item {
+			position: relative;
+			margin-bottom: 30px;
+		}
+
+		/* Centering the modal */
+		.modal-dialog {
+			top: 35px;
+			max-height: 90%;
+			overflow: auto;
+			width: 90%;
+			margin: auto;
+		}
+
+		.modal-content {
+			border-radius: 0;
+			border: 0;
+		}
+
+		.modal-open {
+			overflow: auto !important;
+			padding-right: 0px !important;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -739,7 +784,9 @@
 						<div class="row">
 
 							<div class="col-sm-4">
-								<div class="item">
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
+									data-text="Sample text for image 1"
+									data-img="assets/images/portfolio/cda-article.jpg">
 									<img src="assets/images/portfolio/p1.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a href="#">
@@ -747,7 +794,9 @@
 										</a>
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
-								<div class="item">
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
+									data-text="Sample text for image 2"
+									data-img="assets/images/portfolio/mornington-green-article.jpg">
 									<img src="assets/images/portfolio/p2.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a href="#">
@@ -758,7 +807,9 @@
 							</div><!-- /.col -->
 
 							<div class="col-sm-4">
-								<div class="item">
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
+									data-text="Sample text for image 3"
+									data-img="assets/images/portfolio/pesti-pest-control-article.jpg">
 									<img src="assets/images/portfolio/p3.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a href="#">
@@ -769,7 +820,9 @@
 							</div><!-- /.col -->
 
 							<div class="col-sm-4">
-								<div class="item">
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
+									data-text="Sample text for image 4"
+									data-img="assets/images/portfolio/preston-hire-article.jpg">
 									<img src="assets/images/portfolio/p4.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a href="#">
@@ -777,7 +830,9 @@
 										</a>
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
-								<div class="item">
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
+									data-text="Sample text for image 5"
+									data-img="assets/images/portfolio/rjw-article.jpg">
 									<img src="assets/images/portfolio/p5.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a href="#">
@@ -793,6 +848,49 @@
 		</div><!--/.portfolio-details-->
 
 	</section><!--/.portfolio-->
+
+	<div class="modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<!--div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="portfolioModalLabel">Portfolio Item</h4>
+				</div -->
+				<div class="modal-body">
+					<img id="modal-image" src="" alt="modal image" class="img-responsive">
+					<p id="modal-text">Sample text</p>
+				</div>
+				<!-- div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div -->
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var modal = document.getElementById('portfolioModal');
+			var modalText = modal.querySelector('#modal-text');
+			var modalImage = modal.querySelector('#modal-image');
+
+			document.querySelectorAll('[data-toggle="modal"]').forEach(function (item) {
+				item.addEventListener('click', function () {
+					var text = this.getAttribute('data-text');
+					var img = this.getAttribute('data-img');
+					modalText.textContent = text;
+					modalImage.setAttribute('src', img);
+					console.log("triggers");
+					setTimeout(() => {
+						var modalContent = document.querySelector('.modal-dialog');
+						modalContent.scrollTop = 0;
+					}, 200)
+				});
+			});
+		});
+	</script>
 	<!--portfolio end -->
 
 	<!--clients start -->
