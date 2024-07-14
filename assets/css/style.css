@@ -861,5 +861,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     width: 100%;
     height: fit-content !important;
 }
+
+#modal-image {
+    margin:auto;
+}
 /*========================Thank you=================
 
