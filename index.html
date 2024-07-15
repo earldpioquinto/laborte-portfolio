@@ -771,7 +771,6 @@
 
 							<div class="col-sm-4">
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Creative Dance Academy"
 									data-img="assets/images/portfolio/cda-article.jpg">
 									<img src="assets/images/portfolio/p1.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -781,7 +780,6 @@
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Mornington Green - Legacy Gardens"
 									data-img="assets/images/portfolio/mornington-green-article.jpg">
 									<img src="assets/images/portfolio/p2.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -791,7 +789,7 @@
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
 
-								<div class="item" data-toggle="modal" data-target="#portfolioModal" data-text="Wyntec"
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
 									data-img="assets/images/portfolio/wyntec.jpg">
 									<img src="assets/images/portfolio/p8.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -804,7 +802,6 @@
 
 							<div class="col-sm-4">
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Pesti Pest Control"
 									data-img="assets/images/portfolio/pesti-pest-control-article.jpg">
 									<img src="assets/images/portfolio/p3.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -814,7 +811,7 @@
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Tom Freer" data-img="assets/images/portfolio/tomfreer-2.jpg">
+									data-img="assets/images/portfolio/tomfreer-2.jpg">
 									<img src="assets/images/portfolio/p7.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a>
@@ -823,7 +820,7 @@
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Tom Freer" data-img="assets/images/portfolio/tomfreer.jpg">
+									data-img="assets/images/portfolio/tomfreer.jpg">
 									<img src="assets/images/portfolio/p6.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a>
@@ -835,7 +832,6 @@
 
 							<div class="col-sm-4">
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="Preston Hire"
 									data-img="assets/images/portfolio/preston-hire-article.jpg">
 									<img src="assets/images/portfolio/p4.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -845,7 +841,7 @@
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
 								<div class="item" data-toggle="modal" data-target="#portfolioModal"
-									data-text="RJW Digital" data-img="assets/images/portfolio/rjw-article.jpg">
+									data-img="assets/images/portfolio/rjw-article.jpg">
 									<img src="assets/images/portfolio/p5.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
 										<a>
@@ -853,7 +849,7 @@
 										</a>
 									</div><!-- /.isotope-overlay -->
 								</div><!-- /.item -->
-								<div class="item" data-toggle="modal" data-target="#portfolioModal" data-text="Wyntec"
+								<div class="item" data-toggle="modal" data-target="#portfolioModal"
 									data-img="assets/images/portfolio/wyntec-2.jpg">
 									<img src="assets/images/portfolio/p9.jpg" alt="portfolio image" />
 									<div class="isotope-overlay">
@@ -883,7 +879,6 @@
 				</div -->
 				<div class="modal-body">
 					<img id="modal-image" src="" alt="modal image" class="img-responsive">
-					<p id="modal-text">Sample text</p>
 				</div>
 				<!-- div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -900,11 +895,8 @@
 
 			document.querySelectorAll('[data-toggle="modal"]').forEach(function (item) {
 				item.addEventListener('click', function () {
-					var text = this.getAttribute('data-text');
 					var img = this.getAttribute('data-img');
-					modalText.textContent = text;
 					modalImage.setAttribute('src', img);
-					console.log("triggers");
 					setTimeout(() => {
 						var modalContent = document.querySelector('.modal-dialog');
 						modalContent.scrollTop = 0;
